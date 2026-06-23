@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>暖爪宠物洗护店</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <style>
     :root {
       --ink: #24313a;
@@ -330,30 +331,71 @@
     }
 
     .process {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
+      display: flex;
+      flex-direction: column;
+      max-width: 860px;
+      margin: 0 auto;
     }
 
     .step {
-      padding: 22px;
+      position: relative;
+      display: grid;
+      grid-template-columns: 64px minmax(0, 1fr);
+      column-gap: 22px;
+      padding: 24px 26px;
+      margin-bottom: 18px;
       border-radius: 8px;
       background: var(--mint);
       border: 1px solid #c7e8df;
+      box-shadow: 0 10px 24px rgba(36, 49, 58, 0.05);
+    }
+
+    .step:last-child {
+      margin-bottom: 0;
+    }
+
+    .step-icon {
+      position: relative;
+      grid-row: 1 / 4;
+      display: grid;
+      place-items: center;
+      align-self: start;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--mint-deep);
+      font-size: 22px;
+      box-shadow: 0 8px 18px rgba(44, 154, 134, 0.22);
+    }
+
+    .step:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      bottom: -19px;
+      left: 53px;
+      width: 2px;
+      height: 18px;
+      background: #9fd6c8;
+      transform: translateX(-50%);
     }
 
     .step span {
+      grid-column: 2;
       color: var(--mint-deep);
       font-size: 14px;
       font-weight: 800;
+      letter-spacing: 0.04em;
     }
 
     .step h3 {
+      grid-column: 2;
       margin: 8px 0;
       font-size: 20px;
     }
 
     .step p {
+      grid-column: 2;
       margin: 0;
       color: var(--muted);
       font-size: 15px;
@@ -517,6 +559,22 @@
         margin-bottom: 0;
       }
 
+      .step {
+        grid-template-columns: 50px minmax(0, 1fr);
+        column-gap: 14px;
+        padding: 20px 18px;
+      }
+
+      .step-icon {
+        width: 46px;
+        height: 46px;
+        font-size: 18px;
+      }
+
+      .step:not(:last-child)::after {
+        left: 41px;
+      }
+
       section {
         padding-top: 58px;
         padding-bottom: 58px;
@@ -640,21 +698,25 @@
         </div>
         <div class="process">
           <div class="step">
+            <div class="step-icon" aria-hidden="true"><i class="fa-regular fa-calendar-check"></i></div>
             <span>STEP 01</span>
             <h3>预约时段</h3>
             <p>选择宠物类型、体型和服务项目，减少到店等待。</p>
           </div>
           <div class="step">
+            <div class="step-icon" aria-hidden="true"><i class="fa-solid fa-stethoscope"></i></div>
             <span>STEP 02</span>
             <h3>到店评估</h3>
             <p>美容师确认毛量、毛结和皮肤情况后报价。</p>
           </div>
           <div class="step">
+            <div class="step-icon" aria-hidden="true"><i class="fa-solid fa-shower"></i></div>
             <span>STEP 03</span>
             <h3>专属洗护</h3>
             <p>独立护理台操作，按宠物状态调整节奏。</p>
           </div>
           <div class="step">
+            <div class="step-icon" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
             <span>STEP 04</span>
             <h3>接回反馈</h3>
             <p>交付护理记录，提醒耳朵、指甲、皮肤关注点。</p>
