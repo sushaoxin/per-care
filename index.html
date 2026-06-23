@@ -426,6 +426,11 @@
       color: var(--ink);
     }
 
+    input[type="date"],
+    input[type="time"] {
+      color-scheme: dark;
+    }
+
     textarea {
       min-height: 96px;
       resize: vertical;
@@ -685,12 +690,22 @@
               </select>
             </label>
             <label>
+              到店时间
+              <input type="time" min="10:00" max="20:00" step="1800" />
+            </label>
+          </div>
+          <div class="form-row">
+            <label>
               预约服务
               <select>
                 <option>基础洁净洗护</option>
                 <option>深层皮毛护理</option>
                 <option>精致造型修剪</option>
               </select>
+            </label>
+            <label>
+              到店日期
+              <input type="date" />
             </label>
           </div>
           <label>
